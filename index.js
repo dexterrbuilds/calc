@@ -1,12 +1,12 @@
-let displayEl = document.querySelector(".display");
-displayEl.textContent = [];
+const calculator = document.querySelector(".calc_body");
+const keys = calculator.querySelector(".btn");
 
-function ac() {
-  displayEl.textContent = [];
-}
-
-function seven() {
-  let seven = document.getElementById("seven");
-  sevenEl = seven.textContent;
-  displayEl.textContent = [sevenEl];
-}
+keys.addEventListener("click", (e) => {
+  if (e.target.matches("button")) {
+    const key = e.target;
+    const action = key.dataset.action;
+    const keyContent = key.textContent;
+    const displayedNum = display.textContent;
+    // ...
+  }
+});
