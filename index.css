@@ -27,4 +27,5 @@ body {
   text-align: end;
   border-radius: 5px;
   padding: 10px;
+  box-shadow: inset 2px 2px 4px 2px rgb(220, 220, 220, 0.3);
 }
