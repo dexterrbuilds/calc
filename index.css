@@ -19,5 +19,6 @@ body {
 .display {
   width: 90%;
   height: 10%;
-  background-color: gainsboro;
+  background-color: rgb(220, 220, 220, 0.3);
+  backdrop-filter: blur(2px);
 }
