@@ -4,7 +4,9 @@ body {
 
 .calc_body {
   display: flex;
-  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
   background-color: white;
   height: 500px;
   width: 350px;
@@ -19,7 +21,7 @@ body {
 
 .display {
   width: 90%;
-  height: 10%;
+  height: 15%;
   background-color: rgb(220, 220, 220, 0.3);
   backdrop-filter: blur(2px);
   font-family: "Cabin Sketch";
@@ -28,4 +30,10 @@ body {
   border-radius: 5px;
   padding: 10px;
   box-shadow: inset 2px 2px 4px 2px rgb(220, 220, 220, 0.3);
+}
+
+.calc_btns {
+  width: 90%;
+  height: 70%;
+  background-color: rgb(220, 220, 220, 0.3);
 }
