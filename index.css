@@ -36,4 +36,14 @@ body {
   width: 90%;
   height: 70%;
   background-color: rgb(220, 220, 220, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Cabin Sketch";
+}
+
+.btn_row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
