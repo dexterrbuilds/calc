@@ -3,6 +3,8 @@ body {
 }
 
 .calc_body {
+  display: flex;
+  justify-content: center;
   background-color: white;
   height: 500px;
   width: 350px;
@@ -12,4 +14,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 2px 5px 5px 5px rgb(128, 128, 128);
+}
+
+.display {
+  width: 90%;
+  height: 10%;
+  background-color: gainsboro;
 }
