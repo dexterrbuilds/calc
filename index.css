@@ -9,6 +9,7 @@ body {
   height: 500px;
   width: 350px;
   border-radius: 8px;
+  padding: 50px 0 10px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,4 +22,9 @@ body {
   height: 10%;
   background-color: rgb(220, 220, 220, 0.3);
   backdrop-filter: blur(2px);
+  font-family: "Cabin Sketch";
+  font-size: xx-large;
+  text-align: end;
+  border-radius: 5px;
+  padding: 10px;
 }
