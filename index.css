@@ -117,3 +117,22 @@ footer {
 a {
   text-decoration: none;
 }
+
+/*
+RESPONSIVENESS
+*/
+
+@media (max-width: 760px) {
+  .btn_row {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 25px;
+    justify-content: space-between;
+    padding: 10px;
+    height: 19%;
+  }
+
+  footer {
+    left: 35%;
+  }
+}
