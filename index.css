@@ -71,6 +71,10 @@ body {
   cursor: pointer;
 }
 
+#decimal {
+  font-weight: bolder;
+}
+
 .btn:hover {
   background-color: white;
 }
