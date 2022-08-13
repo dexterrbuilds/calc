@@ -105,3 +105,15 @@ body {
   background-color: white;
   color: blue;
 }
+
+footer {
+  font-family: "Cabin Sketch";
+  font-weight: bolder;
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+}
+
+a {
+  text-decoration: none;
+}
