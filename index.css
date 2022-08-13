@@ -64,6 +64,7 @@ body {
 .btn {
   background-color: grey;
   width: 22%;
+  border-style: solid;
   display: flex;
   justify-content: center;
   align-items: center;
