@@ -29,14 +29,14 @@ const createResultString = (key, displayedNum, state) => {
   if (keyType === "number") {
     return displayedNum === "0" ||
       previousKeyType === "operator" ||
-      previousKeyType === "calculate"
+      previousKeyType === "equal"
       ? keyContent
       : displayedNum + keyContent;
   }
 
   if (keyType === "decimal") {
     if (!displayedNum.includes(".")) return displayedNum + ".";
-    if (previousKeyType === "operator" || previousKeyType === "calculate")
+    if (previousKeyType === "operator" || previousKeyType === "equal")
       return "0.";
     return displayedNum;
   }
@@ -45,16 +45,16 @@ const createResultString = (key, displayedNum, state) => {
     return firstValue &&
       operator &&
       previousKeyType !== "operator" &&
-      previousKeyType !== "calculate"
+      previousKeyType !== "equal"
       ? calculate(firstValue, operator, displayedNum)
       : displayedNum;
   }
 
-  if (keyType === "clear") return 0;
+  if (keyType === "ac") return 0;
 
-  if (keyType === "calculate") {
+  if (keyType === "equal") {
     return firstValue
-      ? previousKeyType === "calculate"
+      ? previousKeyType === "equal"
         ? calculate(displayedNum, operator, modValue)
         : calculate(firstValue, operator, displayedNum)
       : displayedNum;
@@ -79,7 +79,7 @@ const updateCalculatorState = (
       firstValue &&
       operator &&
       previousKeyType !== "operator" &&
-      previousKeyType !== "calculate"
+      previousKeyType !== "equal"
         ? calculatedValue
         : displayedNum;
   }
@@ -89,7 +89,7 @@ const updateCalculatorState = (
       firstValue && previousKeyType === "equal" ? modValue : displayedNum;
   }
 
-  if (keyType === "clear" && key.textContent === "AC") {
+  if (keyType === "ac" && key.textContent === "AC") {
     calculator.dataset.firstValue = "";
     calculator.dataset.modValue = "";
     calculator.dataset.operator = "";
@@ -104,8 +104,8 @@ const updateVisualState = (key, calculator) => {
   );
 
   if (keyType === "operator") key.classList.add("is-pressed");
-  if (keyType === "clear" && key.textContent !== "AC") key.textContent = "AC";
-  if (keyType !== "clear") {
+  if (keyType === "ac" && key.textContent !== "AC") key.textContent = "AC";
+  if (keyType !== "ac") {
     const clearButton = calculator.querySelector("[data-action=ac]");
     clearButton.textContent = "CE";
   }
