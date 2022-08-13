@@ -84,9 +84,9 @@ const updateCalculatorState = (
         : displayedNum;
   }
 
-  if (keyType === "calculate") {
+  if (keyType === "equal") {
     calculator.dataset.modValue =
-      firstValue && previousKeyType === "calculate" ? modValue : displayedNum;
+      firstValue && previousKeyType === "equal" ? modValue : displayedNum;
   }
 
   if (keyType === "clear" && key.textContent === "AC") {
@@ -103,10 +103,10 @@ const updateVisualState = (key, calculator) => {
     k.classList.remove("is-pressed")
   );
 
-  if (keyType === "operator") key.classList.add("is-depressed");
+  if (keyType === "operator") key.classList.add("is-pressed");
   if (keyType === "clear" && key.textContent !== "AC") key.textContent = "AC";
   if (keyType !== "clear") {
-    const clearButton = calculator.querySelector("[data-action=clear]");
+    const clearButton = calculator.querySelector("[data-action=ac]");
     clearButton.textContent = "CE";
   }
 };
