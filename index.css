@@ -2,7 +2,7 @@ body {
   background-color: aqua;
 }
 
-.calc_body {
+.calculator {
   display: flex;
   gap: 20px;
   align-items: center;
