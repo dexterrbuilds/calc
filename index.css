@@ -79,3 +79,8 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.is-pressed {
+  background-color: white;
+  color: orange;
+}
