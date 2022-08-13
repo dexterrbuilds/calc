@@ -11,12 +11,18 @@ body {
   height: 500px;
   width: 350px;
   border-radius: 8px;
-  padding: 50px 0 10px;
+  padding: 10px 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0px 0px 33px 5px rgb(128, 128, 128);
+}
+
+.name {
+  font-family: "Cabin Sketch";
+  font-size: larger;
+  font-weight: bolder;
 }
 
 .display {
