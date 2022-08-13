@@ -19,7 +19,7 @@
         <div class="display"></div>
         <section class="calc_btns">
           <section class="btn_row">
-            <div id="ac" onclick="ac()" class="btn">AC</div>
+            <div data-action="ac" id="ac" onclick="ac()" class="btn">AC</div>
             <div class="btn">+/-</div>
             <div class="btn">%</div>
             <div data-action="divide" class="side_btns btn">/</div>
@@ -44,7 +44,7 @@
           </section>
           <section class="btn_row">
             <div id="zero" class="s_btn">0</div>
-            <div class="btn">.</div>
+            <div data-action="decimal" class="btn">.</div>
             <div data-action="equal" class="side_btns btn">=</div>
           </section>
         </section>
