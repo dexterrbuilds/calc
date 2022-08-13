@@ -105,8 +105,6 @@ const updateVisualState = (key, calculator) => {
     k.classList.remove("is-pressed")
   );
 
-  if (keyType === "ac") k.classList.add("is-depressed");
-
   if (keyType === "operator") {
     key.classList.add("is-pressed");
     console.log("operator");
