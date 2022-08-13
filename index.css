@@ -48,6 +48,8 @@ body {
 
 .btn_row {
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 25px;
   justify-content: space-between;
   padding: 10px;
   height: 19%;
@@ -83,4 +85,9 @@ body {
 .is-pressed {
   background-color: white;
   color: orange;
+}
+
+.is-depressed {
+  background-color: white;
+  color: blue;
 }

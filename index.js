@@ -1,17 +1,8 @@
-const calculate = (n1, operator, n2) => {
-  const firstNum = parseFloat(n1);
-  const secondNum = parseFloat(n2);
-  if (operator === "add") return firstNum + secondNum;
-  if (operator === "subtract") return firstNum - secondNum;
-  if (operator === "multiply") return firstNum * secondNum;
-  if (operator === "divide") return firstNum / secondNum;
-};
-
 const getKeyType = (key) => {
   const { action } = key.dataset;
   if (!action) return "number";
   if (
-    action === "add" ||
+    action === "addition" ||
     action === "subtract" ||
     action === "multiply" ||
     action === "divide"
@@ -19,6 +10,15 @@ const getKeyType = (key) => {
     return "operator";
   // For everything else, return the action
   return action;
+};
+
+const calculate = (n1, operator, n2) => {
+  const firstNum = parseFloat(n1);
+  const secondNum = parseFloat(n2);
+  if (operator === "addition") return firstNum + secondNum;
+  if (operator === "subtract") return firstNum - secondNum;
+  if (operator === "multiply") return firstNum * secondNum;
+  if (operator === "divide") return firstNum / secondNum;
 };
 
 const createResultString = (key, displayedNum, state) => {
@@ -50,7 +50,9 @@ const createResultString = (key, displayedNum, state) => {
       : displayedNum;
   }
 
-  if (keyType === "ac") return 0;
+  if (keyType === "ac") {
+    return "";
+  }
 
   if (keyType === "equal") {
     return firstValue
@@ -89,7 +91,7 @@ const updateCalculatorState = (
       firstValue && previousKeyType === "equal" ? modValue : displayedNum;
   }
 
-  if (keyType === "ac" && key.textContent === "AC") {
+  if (keyType === "ac" && key.textContent === "CE") {
     calculator.dataset.firstValue = "";
     calculator.dataset.modValue = "";
     calculator.dataset.operator = "";
@@ -103,8 +105,16 @@ const updateVisualState = (key, calculator) => {
     k.classList.remove("is-pressed")
   );
 
-  if (keyType === "operator") key.classList.add("is-pressed");
-  if (keyType === "ac" && key.textContent !== "AC") key.textContent = "AC";
+  if (keyType === "ac") k.classList.add("is-depressed");
+
+  if (keyType === "operator") {
+    key.classList.add("is-pressed");
+    console.log("operator");
+  }
+  if (keyType === "ac" && key.textContent !== "AC") {
+    console.log("clear");
+    key.textContent = "AC";
+  }
   if (keyType !== "ac") {
     const clearButton = calculator.querySelector("[data-action=ac]");
     clearButton.textContent = "CE";
