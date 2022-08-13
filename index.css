@@ -71,6 +71,10 @@ body {
   cursor: pointer;
 }
 
+.btn:hover {
+  background-color: white;
+}
+
 .side_btns {
   background-color: orange;
   display: flex;
